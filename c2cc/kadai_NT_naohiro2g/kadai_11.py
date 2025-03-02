@@ -16,10 +16,10 @@ def setPyramid(mc=mc, x=0, z=0, size=3, y=param.Y_SEA + 1, blockTypeId=param.GOL
         y += 1
         sleep(0.01)
 
-if __name__ == "__main__":
-    setPyramid(x=-83, z=-83, y=param.Y_SEA + 17, size=77, blockTypeId=param.IRON_BLOCK)
-    setPyramid(x=-82, z=-82, y=param.Y_SEA + 17, size=75, blockTypeId=param.SHROOMLIGHT)
-    setPyramid(x=-81, z=-81, y=param.Y_SEA + 17, size=73, blockTypeId=param.AIR)
+
+setPyramid(x=-83, z=-83, y=param.Y_SEA + 17, size=77, blockTypeId=param.IRON_BLOCK)
+setPyramid(x=-82, z=-82, y=param.Y_SEA + 17, size=75, blockTypeId=param.SHROOMLIGHT)
+setPyramid(x=-81, z=-81, y=param.Y_SEA + 17, size=73, blockTypeId=param.AIR)
 
 mc.setBlocks(-80, param.Y_SEA + 1, -80,   -10, param.Y_SEA+9,    -10,    param.IRON_BLOCK)
 mc.setBlocks(-79, param.Y_SEA + 2, -79,   -11, param.Y_SEA+9,    -11,    param.AIR)
