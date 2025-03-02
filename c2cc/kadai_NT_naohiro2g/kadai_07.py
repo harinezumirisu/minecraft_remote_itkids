@@ -10,7 +10,7 @@ y = param.Y_SEA + 1
 for _n in range(8):
     z = 25
     for _i in range(20):
-        mc.setBlock(x, y, z,  param.GLOWSTONE)
+        mc.setBlock(x, y, z,  param.IRON_BLOCK)
         sleep(0.1)
         z -= 1
     y += 1
@@ -24,7 +24,7 @@ y = param.Y_SEA + 1
 for _n in range(5):
     x = -30
     for _i in range(16):
-        mc.setBlock(x, y, z,  param.GRASS_BLOCK)
+        mc.setBlock(x, y, z,  param.SEA_LANTERN_BLOCK)
         sleep(0.2)
         x += 1
     z -= 1

@@ -23,16 +23,16 @@ def draw_XYZ_axis(mc, wait=0.1):
     You must create mc or instance of Minecraft world beforehand.
     """
     blockTypeIdX = param.DIAMOND_BLOCK
-    blockTypeIdY = param.DIAMOND_BLOCK
-    blockTypeIdZ = param.DIAMOND_BLOCK
-    BLOCK_TOP_LIGHT = param.SEA_LANTERN_BLOCK
+    blockTypeIdY = param.SEA_LANTERN_BLOCK
+    blockTypeIdZ = param.GOLD_BLOCK
+    BLOCK_TOP_LIGHT = param.GLOWSTONE
 
     # x-axis
     mc.postToChat("x-axis from negative to positive region")
-    x, y, z = -param.AXIS_WIDTH, param.AXIS_Y_V_ORG, 0
-    while x <= param.AXIS_WIDTH:
+    x, y, z = -param.AXIS_WIDTH-100, param.AXIS_Y_V_ORG, -300
+    while x <= param.AXIS_WIDTH-100:
         mc.setBlock(x, y, z, blockTypeIdX)
-        if x < 0:
+        if x < -100:
             x += 2
             sleep(wait * 2)
         else:
@@ -40,7 +40,7 @@ def draw_XYZ_axis(mc, wait=0.1):
             sleep(wait)
     # y-axis
     mc.postToChat("y-axis from negative to positive region")
-    x, y, z = 0, param.AXIS_BOTTOM, 0
+    x, y, z = -100, param.AXIS_BOTTOM, -300
     while y <= param.AXIS_TOP - 5:
         mc.setBlock(x, y, z, blockTypeIdY)
         if y < param.AXIS_Y_V_ORG:
@@ -55,10 +55,10 @@ def draw_XYZ_axis(mc, wait=0.1):
         sleep(wait)
     # z-axis
     mc.postToChat("z-axis from negative to positive region")
-    x, y, z = 0, param.AXIS_Y_V_ORG, -param.AXIS_WIDTH
-    while z <= param.AXIS_WIDTH:
+    x, y, z = -100, param.AXIS_Y_V_ORG, -param.AXIS_WIDTH-300
+    while z <= param.AXIS_WIDTH-300:
         mc.setBlock(x, y, z, blockTypeIdZ)
-        if z < 0:
+        if z < -300:
             z += 2
             sleep(wait * 2)
         else:
@@ -67,17 +67,17 @@ def draw_XYZ_axis(mc, wait=0.1):
 
 
 def clear_XYZ_axis(mc, wait=0.5):
-    mc.setBlocks(-param.AXIS_WIDTH, param.AXIS_Y_V_ORG, 0,   param.AXIS_WIDTH, param.AXIS_Y_V_ORG, 0,   param.GOLD_BLOCK)  # x
+    mc.setBlocks(-param.AXIS_WIDTH-100, param.AXIS_Y_V_ORG, -300,   param.AXIS_WIDTH-100, param.AXIS_Y_V_ORG, -300,   param.GOLD_BLOCK)  # x
     sleep(wait)
-    mc.setBlocks(0, 0, 0,   0, param.AXIS_TOP, 0,   param.AIR)  # y
+    mc.setBlocks(-100, 0, -300,   -100, param.AXIS_TOP, -300,   param.AIR)  # y
     sleep(wait)
-    mc.setBlocks(0, param.AXIS_Y_V_ORG, -param.AXIS_WIDTH,   0, param.AXIS_Y_V_ORG, param.AXIS_WIDTH,   param.GOLD_BLOCK)  # z
+    mc.setBlocks(-100, param.AXIS_Y_V_ORG, -param.AXIS_WIDTH-300,   -100, param.AXIS_Y_V_ORG, param.AXIS_WIDTH-300,   param.GOLD_BLOCK)  # z
     sleep(wait)
 
 
-def reset_minecraft_world(mc, width=160):
-    mc.setBlocks(-width, param.Y_SEA + 1, -width,   width, param.AXIS_TOP,    width,    param.AIR)
-    mc.setBlocks(-width, param.Y_SEA-2, -width,   width, param.Y_SEA,    width,    param.IRON_BLOCK)    
+def reset_minecraft_world(mc, width=50):
+    mc.setBlocks(-width-100, param.Y_SEA + 1, -width-300,   width-100, param.AXIS_TOP,width-300,    param.AIR)
+    mc.setBlocks(-width-100, param.Y_SEA, -width-300,   width-100, param.Y_SEA,width-300,    param.GRASS_BLOCK)    
 
 
 if __name__ == "__main__":
@@ -85,7 +85,7 @@ if __name__ == "__main__":
 
     mc.postToChat("axis_flat module main part")
 
-    reset_minecraft_world(mc, width=80)
+    reset_minecraft_world(mc, width=50)
     # draw_XYZ_axis(mc, wait=0.2)
     # clear_XYZ_axis(mc, wait=0)
     draw_XYZ_axis(mc, wait=0.2)

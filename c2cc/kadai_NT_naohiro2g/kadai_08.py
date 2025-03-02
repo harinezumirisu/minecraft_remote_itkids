@@ -26,6 +26,8 @@ if __name__ == "__main__":
 
     # clearField()
     sleep(1)
-    setPyramid(x=10, z=-20, y=param.Y_SEA + 1, size=21)
+    setPyramid(x=10, z=-20, y=param.Y_SEA + 1, size=21, blockTypeId=param.SHROOMLIGHT)
+    setPyramid(x=11, z=-19, y=param.Y_SEA + 1, size=19, blockTypeId=param.AIR)
     sleep(2)
-    setPyramid(x=-5, z=-35, size=15, blockTypeId=param.IRON_BLOCK)
+    setPyramid(x=-5, z=-35, size=15, blockTypeId=param.SHROOMLIGHT)
+    setPyramid(x=-4, z=-34, size=13, blockTypeId=param.AIR)

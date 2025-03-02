@@ -28,6 +28,10 @@ GOLD_BLOCK = "gold_block"
 IRON_BLOCK = "iron_block"
 GLOWSTONE = "glowstone"
 SEA_LANTERN_BLOCK = "sea_lantern"
+FARMLAND = "farmland"
+WATER = "water"
+SHROOMLIGHT = "shroomlight"
+
 
 # some good blocks for grid like patterns you can count blocks easily
 GLASS = "glass"

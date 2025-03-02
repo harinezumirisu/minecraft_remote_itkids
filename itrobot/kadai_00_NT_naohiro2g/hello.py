@@ -11,4 +11,4 @@ mc.postToChat('Hello Minecraft Java Edition 1.16.5')
 # axis_flat.clear_XYZ_axis(mc, wait=0)
 # axis_flat.draw_XYZ_axis(mc, wait=0.3)
 
-mc.setBlocks(-5, 63, 5,  -5, 127, 5,  param.GOLD_BLOCK)
+mc.setBlocks(0, 63, 0,  0, 127, 0,  param.GOLD_BLOCK)
